@@ -1,0 +1,9 @@
+import { motion } from 'framer-motion'
+import { FiBookOpen, FiBriefcase, FiAward } from 'react-icons/fi'
+
+const items=[
+ {icon:FiBookOpen,title:'Education',text:'B.Tech — Electronics & Communication Engineering',meta:'B.I.T. Sindri · 2023 — 2027'},
+ {icon:FiBriefcase,title:'Industrial Training',text:'6-week vocational training at BCCL',meta:'Exposure to AI-enabled surveillance, GPS, CCTV, RFID, ANPR and monitoring systems'},
+ {icon:FiAward,title:'Problem Solving',text:'300+ DSA problems solved',meta:'LeetCode + GeeksforGeeks · GfG 160 Days challenge'},
+]
+export default function About(){return <section id="about" className="section section-dark"><div className="section-wrap"><div className="about-grid"><div><div className="eyebrow">04 / about</div><h2 className="section-title">I care about<br/><span className="yellow">how it works.</span></h2><p className="about-copy" style={{marginTop:28}}>My focus has moved beyond just making interfaces. I like understanding the complete flow — from a request reaching an API to business logic, database operations and the experience on the other side.</p><p className="about-copy">I’m currently sharpening my Java and Spring Boot skills while building projects that feel closer to real software than classroom assignments.</p></div><div className="timeline">{items.map((item,i)=>{const Icon=item.icon;return <motion.div className="timeline-item" key={item.title} initial={{opacity:0,x:15}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{delay:i*.08}}><div className="timeline-icon"><Icon/></div><div><div className="timeline-top"><h3>{item.title}</h3><span className="timeline-num">0{i+1}</span></div><p className="timeline-text">{item.text}</p><p className="timeline-meta">{item.meta}</p></div></motion.div>})}</div></div></div></section>}
