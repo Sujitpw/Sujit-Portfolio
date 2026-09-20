@@ -554,3 +554,226 @@ main,.footer{position:relative;z-index:1}
   .hero-grid{grid-template-columns:1fr;padding-inline:0}
   .hero-title{font-size:clamp(68px,14vw,100px)}
 }
+
+
+/* =========================================================
+   FINAL HERO LAYOUT FIX — 2026-09-20
+   Target: desktop/laptop screens with limited vertical height.
+   Fixes:
+   1) BACKEND ENGINEERING panel getting cut by the bottom ticker.
+   2) SYSTEMS / APIS / DATABASES HUD text sitting over SOFTWARE.
+   3) Keeps the large hero typography while giving the lower HUD
+      its own safe area.
+   ========================================================= */
+
+@media (min-width: 1151px) and (max-height: 920px){
+  .hero-content{
+    padding-top:96px;
+    padding-bottom:64px;
+  }
+
+  .hero-bootbar{
+    min-height:62px;
+    margin-bottom:12px;
+    padding:8px 15px;
+  }
+
+  .hero-topline{
+    margin-bottom:12px;
+  }
+
+  .hero-grid{
+    min-height:0;
+    grid-template-columns:minmax(0,1.02fr) minmax(520px,.98fr);
+    gap:34px;
+    align-items:center;
+  }
+
+  .hero-main{
+    min-width:0;
+    align-self:center;
+  }
+
+  .hero-title{
+    font-size:clamp(70px,6.7vw,128px);
+    line-height:.80;
+    letter-spacing:-.012em;
+  }
+
+  .hero-copy{
+    max-width:660px;
+    margin-top:15px;
+    font-size:12.5px;
+    line-height:1.5;
+  }
+
+  .hero-actions{
+    margin-top:14px;
+  }
+
+  .hero-socials{
+    margin-top:10px;
+  }
+
+  /* The panel must stay completely inside the grid row. */
+  .hero-system{
+    height:100%;
+    min-height:0;
+    max-height:100%;
+    align-self:stretch;
+    overflow:hidden;
+  }
+
+  .system-body{
+    padding:16px 20px;
+  }
+
+  .system-title{
+    margin:9px 0 12px;
+    font-size:clamp(48px,4.5vw,64px);
+    line-height:.82;
+  }
+
+  .system-terminal{
+    padding:8px 11px;
+    margin-bottom:7px;
+    line-height:1.5;
+  }
+
+  .system-line{
+    padding:7px 0;
+    line-height:1.2;
+  }
+
+  .system-metrics{
+    margin-top:2px;
+  }
+
+  .system-metrics div{
+    padding:7px 6px 6px;
+  }
+
+  .system-metrics strong{
+    margin:3px 0 1px;
+    font-size:16px;
+  }
+
+  .system-meter{
+    margin-top:8px;
+    padding-top:8px;
+  }
+
+  .system-meter>div{
+    height:3px;
+  }
+
+  .system-foot{
+    margin-top:8px;
+    padding-top:8px;
+  }
+
+  /* Keep the lower HUD below the grid instead of allowing it to
+     visually collide with the hero paragraph. */
+  .hero-bottom{
+    position:relative;
+    z-index:8;
+    flex:0 0 auto;
+    margin-top:8px;
+    padding-top:6px;
+    min-height:22px;
+  }
+
+  .hero-bottom-center{
+    position:relative;
+    z-index:10;
+    justify-self:center;
+    padding:3px 12px;
+    background:rgba(8,8,7,.94);
+    border:1px solid rgba(245,173,22,.08);
+    white-space:nowrap;
+    text-shadow:0 0 8px rgba(0,0,0,.95);
+  }
+}
+
+/* 1917x867-style screens: give the engineering panel a safe fixed height
+   so its footer never disappears underneath the ticker. */
+@media (min-width: 1500px) and (min-height: 761px) and (max-height: 920px){
+  .hero-system{
+    height:430px;
+    max-height:430px;
+  }
+}
+
+/* Very short desktop screens need a little more compression. */
+@media (min-width: 1151px) and (max-height: 760px){
+  .hero-content{
+    padding-top:84px;
+    padding-bottom:58px;
+  }
+
+  .hero-bootbar{
+    min-height:56px;
+    margin-bottom:9px;
+    padding:7px 13px;
+  }
+
+  .hero-topline{
+    margin-bottom:9px;
+  }
+
+  .hero-title{
+    font-size:clamp(64px,6.25vw,116px);
+    line-height:.78;
+  }
+
+  .hero-copy{
+    margin-top:11px;
+    font-size:11.5px;
+    line-height:1.4;
+  }
+
+  .hero-actions{
+    margin-top:11px;
+  }
+
+  .hero-socials{
+    margin-top:8px;
+  }
+
+  .hero-system{
+    height:370px;
+    max-height:370px;
+  }
+
+  .system-body{
+    padding:13px 17px;
+  }
+
+  .system-title{
+    margin:7px 0 9px;
+    font-size:52px;
+  }
+
+  .system-terminal{
+    padding:6px 9px;
+    margin-bottom:5px;
+  }
+
+  .system-line{
+    padding:5px 0;
+  }
+
+  .system-metrics div{
+    padding:6px 5px;
+  }
+
+  .system-meter{
+    margin-top:6px;
+    padding-top:6px;
+  }
+
+  .system-foot{
+    margin-top:6px;
+    padding-top:6px;
+  }
+}
