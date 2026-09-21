@@ -1,6 +1,7 @@
 import Navbar from './Components/Navbar'
 import Header from './Components/Header'
 import Skill from './Components/Skill'
+import Milestone from './Components/Milestone'
 import Projects from './Components/Projects'
 import About from './Components/About'
 import Contact from './Components/Contact'
@@ -36,6 +37,7 @@ function App() {
       <main>
         <Header />
         <Skill />
+        <Milestone />
         <Projects />
         <About />
         <Contact />
